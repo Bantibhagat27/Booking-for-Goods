@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div class="language-switcher">
+        <select>
+           <option value="en">English</option>
+           <option value="hi">हिन्दी</option>
+        </select>
+    </div>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoodsWala Style Front Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>GoodsWala</h1>
+            </div>
+            <!-- Link JavaScript -->
+            <script src="script.js"></script>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="admin-dashboard.html" class="btn-secondary">Admin Dashboard</a>
+                    </li>
+                    <li><a href="file:///D:/HTML/PROJECT%201/front%20page%20project/home%20page/index.html">Home</a></li>
+                    <li><a href="#booking">Book Truck</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#fare">Fare Estimator</a></li>
+                    <li><a href="http://127.0.0.1:5501/index.html">Partner Login</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Fast. Safe. Affordable.</h1>
+            <p>Book a Truck or delivery with GoodsWala.</p>
+            <a href="#" class="cta-button">Book Now</a>
+        </div>
+        <div class="hero-image">
+
+            <img src="download.jpeg" alt=" Book GoodsWala">
+        </div>
+    </section>
+    <section class=" partner-login ">
+        <div class="container ">
+            <h2>Partner With Us</h2>
+            <a href="file:///D:/HTML/PROJECT%201/LogIN%20page%20project/index.html " class="btn-secondary ">Driver Login</a>
+            <a href="file:///D:/HTML/PROJECT%201/LogIN%20page%20project/index.html " class="btn-primary ">Join as Partner</a>
+        </div>
+    </section>
+    <section class="fare-estimator ">
+        <div class="container ">
+            <h2>Fare Estimator</h2>
+            <form id="fareForm ">
+                <input type="number " id="distance " placeholder="Distance (km) " required>
+                <input type="number " id="weight " placeholder="Weight (kg) " required>
+                <button type="submit " class="btn-primary ">Estimate Fare</button>
+            </form>
+            <p id="fareResult "></p>
+        </div>
+    </section>
+    <section class="cities ">
+        <div class="container ">
+            <h2>Popular Cities We Serve</h2>
+            <ul class="city-list ">
+                <li>📍 Mumbai</li>
+                <li>📍 Delhi</li>
+                <li>📍 Bengaluru</li>
+                <li>📍 Bhopal</li>
+                <li>📍 Indore</li>
+                <li>📍 Rewa</li>
+                <li>📍 Pune</li>
+            </ul>
+        </div>
+    </section>
+    <section class="availability ">
+        <div class="container ">
+            <h2>Check Truck Availability</h2>
+            <form>
+                <select required>
+                   <option value=" ">Select City</option>
+                   <option>Bhopal</option>
+                   <option>Indore</option>
+                   <option>Bengaluru</option>
+                   <option>Delhi</option>
+                </select>
+                <input type="date" id="availability-date" name="availabilityDate" required>
+                <button type="submit " class="btn-primary ">Check</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="map ">
+        <div class="container ">
+            <h2>We Deliver Across India</h2>
+            <div class="map-container ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14264450.184904352!2d68.17664529203007!3d22.351114864991713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a292b357cae8c4f%3A0x58dfd55db82a5d56!2sIndia!5e0!3m2!1sen!2sin!4v1715850119979!5m2!1sen!2sin "
+                    width="100% " height="450 " style="border:0; " allowfullscreen=" " loading="lazy ">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <section class="truck-gallery ">
+        <div class="container ">
+            <h2>Our Trucks</h2>
+            <div class="gallery ">
+                <div class="truck-card ">
+                    <img src=" images.jpeg " alt="Refrigerated truck ">
+                    <h3>Refrigerated truck</h3>
+                    <p>Ideal for general goods and temporary items.</p>
+                </div>
+                <div class="truck-card ">
+                    <img src="images (1).jpeg " alt=" Container Truck ">
+                    <h3>Container Truck</h3>
+                    <p>Secured container for small cargo.</p>
+                </div>
+                <div class="truck-card ">
+                    <img src="download (1).jpeg " alt="Dump Truck ">
+                    <h3>Dump Truck</h3>
+                    <p>Perfect for dumping goods.</p>
+                </div>
+                <div class="truck-card ">
+                    <img src="download (2).jpeg " alt="Trailer Trucks ">
+                    <h3>Trailer Trucks</h3>
+                    <p>Ideal for general goods and bulky items.</p>
+                </div>
+                <div class="truck-card ">
+                    <img src=" download (3).jpeg " alt="Box Truck ">
+                    <h3>Box Truck</h3>
+                    <p>Secured container for sensitive cargo.</p>
+                </div>
+                <div class="truck-card ">
+                    <img src="download (4).jpeg " alt="Heavy Truck ">
+                    <h3>Heavy Truck</h3>
+                    <p>Perfect for heavy goods storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="customer-dashboard ">
+        <div class="container ">
+            <h2>Customer Dashboard</h2>
+            <div class="dashboard-cards ">
+                <div class="card ">
+                    <h3>My Bookings</h3>
+                    <ul>
+                        <li>Booking #12345 - Bhoapl to Indore- <strong>In Transit</strong></li>
+                        <li>Booking #12346 - Patna to Darbhanga - <strong>Delivered</strong></li>
+                        <li>Booking #12347 - Bhopal to Rewa- <strong>Pending</strong></li>
+                    </ul>
+                </div>
+                <div class="card ">
+                    <h3>Profile Info</h3>
+                    <p><strong>Name:</strong>Bantty</p>
+                    <p><strong>Email:</strong> bkb160@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 9876543210</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container ">
+            <p>&copy; 2025 GoodsWala. All rights reserved.</p>
+            <p>
+                <a href="#privacy ">Privacy Policy</a> |
+                <a href="#terms ">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("fareForm ").addEventListener("submit ", function(e) {
+            e.preventDefault();
+            const distance = parseFloat(document.getElementById("distance ").value);
+            const weight = parseFloat(document.getElementById("weight ").value);
+            const ratePerKm = 8;
+            const ratePerKg = 2;
+
+            const fare = (distance * ratePerKm) + (weight * ratePerKg);
+            document.getElementById("fareResult ").innerText = `Estimated Fare: ₹${fare.toFixed(2)}`;
+        });
+    </script>
+    <section id="availability " class="truck-availability ">
+        <div class="container ">
+            <h2>Live Truck Availability</h2>
+            <div class="availability-grid ">
+                <div class="availability-card ">
+                    <h3>Bhopal</h3>
+                    <ul>
+                        <li>✅ Open Truck - Available</li>
+                        <li>❌ Container Truck - Not Available</li>
+                        <li>✅ Mini Truck - Available</li>
+                    </ul>
+                </div>
+                <div class="availability-card ">
+                    <h3>Mumbai</h3>
+                    <ul>
+                        <li>✅ Container Truck - Available</li>
+                        <li>✅ Refrigerated Truck - Available</li>
+                        <li>❌ Open Truck - Not Available</li>
+                    </ul>
+                </div>
+                <div class="availability-card ">
+                    <h3>Delhi</h3>
+                    <ul>
+                        <li>✅ Mini Truck - Available</li>
+                        <li>✅ Open Truck - Available</li>
+                        <li>✅ Container Truck - Available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/7366972389 " class="whatsapp-float " target="_blank " title="Chat with us ">
+  💬 Chat on WhatsApp
+    </a>
+
+
+</body>
+
+</html> document.getElementById("fareResult ").innerText = `Estimated Fare: ₹${fare.toFixed(2)}`; });
+</script>
+
+</html>
