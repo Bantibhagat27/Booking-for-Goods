@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+header {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(95 126 141 / 10%);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    font-style: sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #444;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px;
+    background: linear-gradient(to right, #55b4f3, #dbffba)
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    padding: 12px 24px;
+    background-color: #3053f0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #334ddf;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    font-style: sans-serif;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    padding: 4%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    color: #000;
+    font-size: 14px;
+}
+
+.map {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.partner-login {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.fare-estimator {
+    padding: 40px 0;
+    text-align: center;
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+}
+
+.fare-estimator form input {
+    padding: 10px;
+    margin: 10px;
+    width: 190px;
+}
+
+#fareResult {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cities {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.city-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.language-switcher select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.availability {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.availability form {
+    margin-top: 20px;
+}
+
+.availability select,
+.availability input[type="date"] {
+    padding: 10px;
+    margin: 10px;
+    width: 190px;
+}
+
+.map {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.truck-gallery {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.truck-gallery .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.truck-card {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.truck-card:hover {
+    transform: translateY(-5px);
+}
+
+.truck-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.truck-card h3 {
+    margin: 15px 0 10px;
+}
+
+.truck-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.customer-dashboard {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.dashboard-cards .card {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 25px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.dashboard-cards .card h3 {
+    margin-bottom: 20px;
+}
+
+.dashboard-cards .card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.dashboard-cards .card ul li {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.main-header {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #ffcc00;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #55b4f3;
+}
+
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        padding-top: 10px;
+    }
+    .nav-menu ul li {
+        width: 100%;
+    }
+    .nav-menu ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #444;
+        border-radius: 5px;
+    }
+    .steps {
+        flex-direction: column;
+    }
+    .truck-gallery .gallery {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .truck-card {
+        width: 100%;
+    }
+    form input,
+    form button,
+    form textarea {
+        width: 100% !important;
+    }
+}
+
+.dashboard-header {
+    background-color: #55b4f3;
+    background: (to right, #55b4f3, #dbffba);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.dashboard {
+    background: (to right, #55b4f3, #dbffba);
+    padding: 50px 0;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.dashboard-card {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.truck-availability {
+    padding: 50px 0;
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    text-align: center;
+}
+
+.availability-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.availability-card {
+    background: linear-gradient(to right, #55b4f3, #dbffba);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.availability-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.availability-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.availability-card li {
+    font-size: 1rem;
+    margin: 8px 0;
+}
