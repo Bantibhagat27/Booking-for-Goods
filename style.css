@@ -7,6 +7,8 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     color: #333;
+    background: linear-gradient(to right, #55b4f3, #dbffba)
+
 }
 
 header {
@@ -47,7 +49,6 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 60px 40px;
-    background: linear-gradient(to right, #55b4f3, #dbffba)
 }
 
 .hero-text {
@@ -94,7 +95,6 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     color: #000;
     font-size: 14px;
 }
@@ -114,7 +114,6 @@ footer {
 }
 
 .partner-login {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 40px 0;
     text-align: center;
 }
@@ -122,7 +121,6 @@ footer {
 .fare-estimator {
     padding: 40px 0;
     text-align: center;
-    background: linear-gradient(to right, #55b4f3, #dbffba);
 }
 
 .fare-estimator form input {
@@ -138,7 +136,6 @@ footer {
 }
 
 .cities {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 40px 0;
     text-align: center;
 }
@@ -180,7 +177,6 @@ footer {
 }
 
 .availability {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 40px 0;
     text-align: center;
 }
@@ -197,7 +193,6 @@ footer {
 }
 
 .map {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 40px 0;
     text-align: center;
 }
@@ -212,7 +207,6 @@ footer {
 }
 
 .truck-gallery {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 40px 0;
     text-align: center;
 }
@@ -226,7 +220,6 @@ footer {
 }
 
 .truck-card {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     border-radius: 10px;
     padding: 15px;
     width: 280px;
@@ -255,7 +248,6 @@ footer {
 }
 
 .customer-dashboard {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 40px 0;
     text-align: center;
 }
@@ -269,7 +261,6 @@ footer {
 }
 
 .dashboard-cards .card {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 25px;
     border-radius: 10px;
     width: 320px;
@@ -380,7 +371,6 @@ footer {
 }
 
 .dashboard {
-    background: (to right, #55b4f3, #dbffba);
     padding: 50px 0;
 }
 
@@ -392,7 +382,6 @@ footer {
 }
 
 .dashboard-card {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 20px;
     border-radius: 10px;
     flex: 1;
@@ -402,7 +391,6 @@ footer {
 
 .truck-availability {
     padding: 50px 0;
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     text-align: center;
 }
 
@@ -414,7 +402,6 @@ footer {
 }
 
 .availability-card {
-    background: linear-gradient(to right, #55b4f3, #dbffba);
     padding: 20px;
     border-radius: 10px;
     flex: 1;
@@ -436,3 +423,9 @@ footer {
     font-size: 1rem;
     margin: 8px 0;
 }
+/* login page */
+* {
+  box-sizing: border-box;
+}
+
+
