@@ -283,7 +283,7 @@ footer {
 }
 
 .main-header {
-    background: #333;
+    background: #00000047;
     color: white;
     padding: 15px 0;
     position: sticky;
@@ -427,5 +427,9 @@ footer {
 * {
   box-sizing: border-box;
 }
-
-
+@media (min-width: 768px) {
+    .md\:block {
+        display: block;
+        background-color: rgb(35, 250, 161);
+    }
+}

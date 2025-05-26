@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoodsWala Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+
+  <!-- Include Sidebar + Header -->
+  <!-- Copy the sidebar + header snippet here -->
+  
+  <aside class="fixed top-0 left-0 w-64 h-full bg-white dark:bg-gray-800 shadow-md p-6 hidden md:block">
+    <h2 class="text-xl font-bold text-blue-600 mb-8 flex items-center space-x-2">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 3h18v18H3V3z" />
+      </svg>
+      <span>GoodsWala</span>
+    </h2>
+    <nav class="space-y-5 text-gray-700 dark:text-gray-300">
+      <a href="index.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400 font-semibold">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="bookings.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 7h18M3 12h18M3 17h18" />
+        </svg>
+        <span>Bookings</span>
+      </a>
+      <a href="drivers.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Drivers</span>
+      </a>
+      <a href="customers.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+        </svg>
+        <span>Customers</span>
+      </a>
+      <a href="settings.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 15.5c2.5 0 4.5-2 4.5-4.5S14.5 6.5 12 6.5 7.5 8.5 7.5 11s2 4.5 4.5 4.5z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+  </aside>
+
+  <header class="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-gray-900 shadow flex items-center px-6 md:ml-64">
+    <button class="md:hidden mr-4" onclick="document.querySelector('aside').classList.toggle('hidden')">
+      <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <h1 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Dashboard</h1>
+
+    <button id="darkToggle" class="ml-auto px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      🌙 Dark Mode
+    </button>
+  </header>
+
+  <main class="pt-20 md:ml-64 px-6 max-w-7xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-6">Welcome, Admin!</h2>
+    <p class="mb-6">Here is a quick overview of your platform.</p>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+        <h3 class="font-bold text-lg mb-2">Total Bookings</h3>
+        <p id="totalBookings" class="text-3xl font-extrabold">0</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+        <h3 class="font-bold text-lg mb-2">Active Drivers</h3>
+        <p id="activeDrivers" class="text-3xl font-extrabold">0</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+        <h3 class="font-bold text-lg mb-2">Pending Bookings</h3>
+        <p id="pendingBookings" class="text-3xl font-extrabold">0</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Dark mode toggle & persist
+    const darkToggl = document.getElementById('darkToggle');
+    const roo= document.documentElement;
+    if (localStorage.getItem('darkMode') === 'true') {
+      root.classList.add('dark');
+      darkToggle.textContent = '☀️ Light Mode';
+    }
+
+    darkToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      if (root.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'true');
+        darkToggle.textContent = '☀️ Light Mode';
+      } else {
+        localStorage.setItem('darkMode', 'false');
+        darkToggle.textContent = '🌙 Dark Mode';
+      }
+    });
+
+    // Login check
+    async function checkAuth() {
+      const res = await fetch('http://localhost:3000/api/bookings', { credentials: 'include' });
+      if (res.status === 401) {
+        window.location.href = 'login.html';
+      }
+    }
+    checkAuth();
+
+    // Fetch booking and driver stats
+    async function loadStats() {
+      try {
+        const bookingRes = await fetch('http://localhost:3000/api/bookings', { credentials: 'include' });
+        const bookings = await bookingRes.json();
+        const driverRes = await fetch('http://localhost:3000/api/drivers', { credentials: 'include' });
+        const drivers = await driverRes.json();
+
+        document.getElementById('totalBookings').textContent = bookings.length;
+        document.getElementById('activeDrivers').textContent = drivers.filter(d => d.status === 'Active').length;
+        document.getElementById('pendingBookings').textContent = bookings.filter(b => b.status === 'Pending').length;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    loadStats();
+  </script>
+  
+ <class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+
+  <!-- Sidebar + header (reuse same snippet) -->
+  <aside class="fixed top-0 left-0 w-64 h-full bg-white dark:bg-gray-800 shadow-md p-6 hidden md:block">
+    <h2 class="text-xl font-bold text-blue-600 mb-8 flex items-center space-x-2">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 3h18v18H3V3z" />
+      </svg>
+      <span>GoodsWala</span>
+    </h2>
+    <nav class="space-y-5 text-gray-700 dark:text-gray-300">
+      <a href="index.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="index.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400 font-semibold">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 7h18M3 12h18M3 17h18" />
+        </svg>
+        <span>Bookings</span>
+      </a>
+      <a href="drivers.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Drivers</span>
+      </a>
+      <a href="customers.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+        </svg>
+        <span>Customers</span>
+      </a>
+      <a href="settings.html" class="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 15.5c2.5 0 4.5-2 4.5-4.5S14.5 6.5 12 6.5 7.5 8.5 7.5 11s2 4.5 4.5 4.5z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+  </aside>
+
+  <header class="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-gray-900 shadow flex items-center px-6 md:ml-64">
+    <button class="md:hidden mr-4" onclick="document.querySelector('aside').classList.toggle('hidden')">
+      <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <h1 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Bookings</h1>
+
+    <button id="darkToggle" class="ml-auto px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      🌙 Dark Mode
+    </button>
+  </header>
+
+  <main class="pt-20 md:ml-64 px-6 max-w-7xl mx-auto">
+    <section>
+      <h2 class="text-2xl font-semibold mb-6">All Bookings</h2>
+        <a href="book-truck.html" class="btn-secondary ">Booking</a>
+
+      <table class="min-w-full bg-white dark:bg-gray-800 rounded shadow overflow-hidden">
+        <thead class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200">
+          <tr>
+            <th class="py-3 px-6 text-left">ID</th>
+            <th class="py-3 px-6 text-left">Customer</th>
+            <th class="py-3 px-6 text-left">Source</th>
+            <th class="py-3 px-6 text-left">Destination</th>
+            <th class="py-3 px-6 text-left">Fare (₹)</th>
+            <th class="py-3 px-6 text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTableBody" class="text-gray-800 dark:text-gray-200">
+          <!-- Rows inserted by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold mb-4">Add New Booking</h2>
+      <form id="addBookingForm" class="space-y-4 max-w-md">
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Customer Name"
+          required
+          class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="text"
+          id="source"
+          placeholder="Source City"
+          required
+          class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="text"
+          id="destination"
+          placeholder="Destination City"
+          required
+          class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="number"
+          id="fare"
+          placeholder="Fare (₹)"
+          required
+          min="0"
+          class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <select
+          id="status"
+          required
+          class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+        >
+          Add Booking
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Dark mode toggle (same as before)
+    const darkToggle = document.getElementById('darkToggle');
+    const root = document.documentElement;
+    if (localStorage.getItem('darkMode') === 'true') {
+      root.classList.add('dark');
+      darkToggle.textContent = '☀️ Light Mode';
+    }
+    darkToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      if (root.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'true');
+        darkToggle.textContent = '☀️ Light Mode';
+      } else {
+        localStorage.setItem('darkMode', 'false');
+        darkToggle.textContent = '🌙 Dark Mode';
+      }
+    });
+
+    // Login check
+    async function checkAuth() {
+      const res = await fetch('http://localhost:3000/api/bookings', { credentials: 'include' });
+      if (res.status === 401) {
+        window.location.href = 'login.html';
+      }
+    }
+    checkAuth();
+
+    // Fetch bookings and populate table
+    async function loadBookings() {
+      const res = await fetch('http://localhost:3000/api/bookings', { credentials: 'include' });
+      if (res.ok) {
+        const bookings = await res.json();
+        const tbody = document.getElementById('bookingTableBody');
+        tbody.innerHTML = '';
+        bookings.forEach(b => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="border-b px-4 py-2">${b.id}</td>
+            <td class="border-b px-4 py-2">${b.customerName}</td>
+            <td class="border-b px-4 py-2">${b.source}</td>
+            <td class="border-b px-4 py-2">${b.destination}</td>
+            <td class="border-b px-4 py-2">${b.fare}</td>
+            <td class="border-b px-4 py-2">${b.status}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+    }
+    loadBookings();
+
+    // Add booking form submission
+    document.getElementById('addBookingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const customerName = document.getElementById('customerName').value.trim();
+      const source = document.getElementById('source').value.trim();
+      const destination = document.getElementById('destination').value.trim();
+      const fare = Number(document.getElementById('fare').value);
+      const status = document.getElementById('status').value;
+
+      const res = await fetch('http://localhost:3000/api/bookings', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ customerName, source, destination, fare, status }),
+      });
+
+      if (res.ok) {
+        alert('Booking added successfully');
+        loadBookings();
+        e.target.reset();
+      } else {
+        alert('Failed to add booking');
+      }
+    });
+  </script>
+</body>
+</html>
