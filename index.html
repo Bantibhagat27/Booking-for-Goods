@@ -1,58 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoodsWala Style Front Page</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+  .body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .navbar {
+    background-color: #0a939608;
+    padding: 1rem;
+    position: relative;
     
-</head>
+  }
+
+  .hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: white;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    border-top: 0px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .menu a {
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 0px solid #eee;
+  }
+
+  .menu a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+</style>
+
+  </head>
 
 <body>
     <header class="main-header">
+        <div class="navbar">
+  <button class="hamburger" id="hamburgerBtn">☰</button>
+  <div class="menu" id="menu">
+    <a href="dashboard-index.html">Admin Dashboard</a>
+    <a href="index.html">Home</a>
+    <a href="book-truck.html">Book Truck</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#">Fare Estimator</a>
+    <a href="partner-login.html">Partner Login</a>
+    <a href="#">Language</a>
+  </div>
+</div>
+
+        
+        <script>
+    // Grab the button and nav panel
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navPanel = document.getElementById('mainNav');
+
+    // Toggle the 'open' class on click
+    toggleBtn.addEventListener('click', () => {
+      navPanel.classList.toggle('open');
+    });
+
+    // Optional: close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggleBtn.contains(e.target) && !navPanel.contains(e.target)) {
+        navPanel.classList.remove('open');
+      }
+    });
+  </script>
+
         <div class="container nav-container">
             <div class="logo">
-                <h1>GoodsWala</h1>
+                <center><h1>GoodsWala</h1></center>
             </div>
-            <!-- Link JavaScript -->
-            <script src="script.js"></script>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="dashboard-index.html" class="btn-secondary">Admin Dashboard </a> 
-                    </li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="book-truck.html">Book Truck</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="#fare">Fare Estimator</a></li>
-                    <li><a href="partner-login.html">Partner Login</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <select>
-                       <option value="en">English</option>
-                       <option value="hi">हिन्दी</option>
-                    </select>    
-                </ul>
-                
-            </nav>
         </div>
-<header class="w-full flex justify-end items-center px-6 py-4 bg-white dark:bg-gray-900 shadow-md relative z-10">
-  <!-- Profile Icon -->
-  <div class="relative group">
-    <button id="profileBtn" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center focus:outline-none">
-      <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM4 20c0-2.67 5.33-4 8-4s8 1.33 8 4v1H4v-1z"/>
-      </svg>
-    </button>
+        <header class="w-full flex justify-end items-center px-6 py-4 bg-white dark:bg-gray-900 shadow-md relative z-10">
+           <!-- Profile Icon -->
+            <div class="relative group">
+              <button id="profileBtn" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM4 20c0-2.67 5.33-4 8-4s8 1.33 8 4v1H4v-1z"/>
+                    </svg>
+                </button>
 
-    <!-- Dropdown (optional) -->
-    <div id="profileMenu" class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-      <a href="gallery.html" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">My Profile</a>
-      <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Settings</a>
-      <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
-    </div>
-  </div>
-</header>
+             <!-- Dropdown (optional) -->
+                <div id="profileMenu" class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+                   <a href="gallery.html" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">My Profile</a>
+                   <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Settings</a>
+                   <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
+                </div>
+            </div>
+       </header>
 
     </header>
 
@@ -244,10 +304,23 @@
   💬 Chat on WhatsApp
     </a>
 
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('menu');
+
+  hamburgerBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburgerBtn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  });
+</script>
 
 </body>
 
 </html> 
-</script>
 
-</html>
+
