@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    padding: 15px 40px;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -283,7 +283,7 @@ footer {
 }
 
 .main-header {
-    background: #00000047;
+    background: #d6df5608;
     color: white;
     padding: 15px 0;
     position: sticky;
@@ -301,6 +301,7 @@ footer {
     margin: 0;
     font-size: 1.8rem;
     color: #ffcc00;
+    
 }
 
 .nav-menu ul {
@@ -433,3 +434,74 @@ footer {
         background-color: rgb(35, 250, 161);
     }
 }
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container for menu */
+    .menu-container {
+      position: relative;
+      padding: 1rem;
+      background: #fbffff00;
+      color: #fff;
+    }
+
+    /* Main Menu button */
+    .menu-toggle {
+      background: none;
+      border: 2px solid #fff;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* The dropdown/nav panel */
+    .nav-panel {
+      position: absolute;
+      top: 100%;
+      left: 1rem;
+      background: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+      width: 200px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* When .open is toggled, allow it to expand */
+    .nav-panel.open {
+      max-height: 500px; /* large enough to show all items */
+    }
+
+    /* Menu items */
+    .nav-panel ul {
+      list-style: none;
+    }
+    .nav-panel li {
+      border-bottom: 1px solid #eee;
+    }
+    .nav-panel li:last-child {
+      border-bottom: none;
+    }
+    .nav-panel a {
+      display: block;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .nav-panel a:hover {
+      background: #f0f0f0;
+    }
