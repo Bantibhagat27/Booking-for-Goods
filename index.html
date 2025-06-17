@@ -135,15 +135,28 @@
         </div>
     </section>
     <section class="fare-estimator ">
-        <div class="container ">
-            <h2>Fare Estimator</h2>
-            <form id="fareForm ">
-                <input type="number " id="distance " placeholder="Distance (km) " required>
-                <input type="number " id="weight " placeholder="Weight (kg) " required>
-                <button type="submit " class="btn-primary ">Estimate Fare</button>
-            </form>
-            <p id="fareResult "></p>
-        </div>
+        <div class="container">
+        <h2>Fare Estimator</h2>
+        <form id="fareForm">
+            <input type="number" id="distance" placeholder="Distance in km" required>
+            <input type="number" id="weight" placeholder="Weight in kg" required>
+            <button type="submit">Calculate Fare</button>
+        </form>
+        <div id="fareResult"></div>
+    </div>
+
+    <script>
+        document.getElementById("fareForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const distance = parseFloat(document.getElementById("distance").value);
+            const weight = parseFloat(document.getElementById("weight").value);
+            const ratePerKm = 8;
+            const ratePerKg = 2;
+
+            const fare = (distance * ratePerKm) + (weight * ratePerKg);
+            document.getElementById("fareResult").innerText = `Estimated Fare: ₹${fare.toFixed(2)}`;
+        });
+    </script>
     </section>
     <section class="cities ">
         <div class="container ">
@@ -255,19 +268,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById("fareForm ").addEventListener("submit ", function(e) {
-            e.preventDefault();
-            const distance = parseFloat(document.getElementById("distance ").value);
-            const weight = parseFloat(document.getElementById("weight ").value);
-            const ratePerKm = 8;
-            const ratePerKg = 2;
-
-            const fare = (distance * ratePerKm) + (weight * ratePerKg);
-            document.getElementById("fareResult ").innerText = `Estimated Fare: ₹${fare.toFixed(2)}`;
-        });
-    </script>
     <section id="availability " class="truck-availability ">
         <div class="container ">
             <h2>Live Truck Availability</h2>
